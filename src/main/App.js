@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { getTokenOrRefresh } from './token_util';
-import './custom.css'
+import { getTokenOrRefresh } from '../token_util';
 import { ResultReason } from 'microsoft-cognitiveservices-speech-sdk';
 
 const speechsdk = require('microsoft-cognitiveservices-speech-sdk')

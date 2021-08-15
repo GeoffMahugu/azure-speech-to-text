@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --pureWhite: #ffffff;
+    --primaryBlack: #000000;
+    --fontFamily: 'Roboto', sans-serif;
+
+    --primaryColor: #00D2BE;
+    --accentColor: #FFDE00;
+    --secondaryColor: #376DF9;
+
+    --primaryGrey: #6A6A6A;
+    --lightGrey: #F5F5F5;
+    --primaryRed: #FF8D74;
+
+
+    --defFontSize: 15px;
+    --smFontSize: 12px;
+    --xsmFontSize: 8px;
+    --full-containerPadding: 30px;
+    --containerPadding: 0px 30px;
+    --defBorderRadius: 5px;
+}
+
+
+
+// MIXINS START   ----------------------
+
+
+
+@mixin pageContainer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0px auto;
+}
+
+@mixin pointerItem {
+    cursor: pointer;
+    outline: none !important;
+
+    &:hover,
+    &:active {
+        color: var(--primaryColor);
+    }
+}
+
+
+@mixin defBtn {
+    @include pointerItem();
+    border-radius: var(--defBorderRadius);
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--fontFamily);
+    padding: 10px;
+    width: 100%;
+    font-weight: normal;
+    font-size: var(--defFontSize);
+    border: none;
+    color: var(--primaryGrey);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 15px;
+
+    &:hover,
+    &:active {
+        border: 1px solid;
+        font-weight: bold;
+    }
+}
+
+@mixin defTxt {
+    font-size: var(--defFontSize);
+    font-weight: normal;
+    color: var(--primaryGrey)
+}
+
+
+@mixin hiddenScroll {
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@mixin scrollItem {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        height: 5px;
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--lightGrey);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+}
+
+
+
+// MIXINS END     ----------------------
+
+
+h1,
+h2,
+h3,
+h4,
+h6,
+p,
+span {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none !important;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    font-family: var(--fontFamily);
+    @include scrollItem();
+}
+
+.display-none {
+    display: none;
+}
+
+
+
+.txt-center {
+    text-align: center !important;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.font-title {
+    font-size: 18px;
+}
+
+.pl-5 {
+    padding-left: 5px;
+}
+
+.pl-10 {
+    padding-left: 19px;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+
+
+.mr-10 {
+    margin-right: 10px !important;
+}
+
+.mb-5 {
+    margin-bottom: 5px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mt-50 {
+    margin-top: 50px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+
+.mb-100 {
+    margin-bottom: 100px !important;
+}
+
+// PAGES START   ----------------------
+
+
+
+.HomeContainer,
+.ProfilePageContainer,
+.DiscoverPageContainer,
+.HireDesignersPageContainer,
+.NotificationsPageContainer,
+.MessagesPageContainer,
+.ContractsContainer,
+.WriteContractPageContainer,
+.ContractDetailsContainer {
+
+    @include pageContainer();
+    padding: var(--containerPadding);
+    min-height: 700px
+}
+
+
+
+
+.lg-hide {
+    display: none !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    /* phones */
+    :root {
+        --full-containerPadding: 20px;
+        --containerPadding: 0px 20px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+}
