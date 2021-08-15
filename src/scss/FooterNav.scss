@@ -1,0 +1,36 @@
+@import './App.scss';
+
+.FooterNavContainer {
+    position: absolute;
+    height: 60px;
+    bottom: 5px;
+    background-color: var(--pureWhite);
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: 1px solid var(--lightGrey);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: var(--defBoxShadow);
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+
+    .footer-icon-wrapper {
+        display: flex;
+        justify-content: center;
+
+        svg {
+            font-size: 20px;
+        }
+
+        &.active {
+            color: var(--primaryColor);
+
+            svg {
+                font-size: 30px;
+                color: var(--primaryColor);
+            }
+        }
+    }
+}

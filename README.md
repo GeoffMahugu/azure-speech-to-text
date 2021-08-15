@@ -179,3 +179,17 @@ const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.auth
 ```
 
 In many other Speech service samples, you will see the function `SpeechConfig.fromSubscription` used instead of `SpeechConfig.fromAuthorizationToken`, but by **avoiding the usage** of `fromSubscription` on the front-end, you prevent your speech subscription key from becoming exposed, and instead utilize the token authentication process. `fromSubscription` is safe to use in a Node.js environment, or in other Speech SDK programming languages when the call is made on a back-end, but it is best to avoid using in a browser-based JavaScript environment.
+
+
+
+
+CREDITS 
+
+Azure Speech To Text Bolierplate by (@trevorbye)[https://github.com/trevorbye]:
+
+- https://github.com/Azure-Samples/AzureSpeechReactSample
+
+
+Bars animation by (@gautam2010)[https://codepen.io/gautam2010]:
+
+- https://codepen.io/gautam2010/pen/JjXNgYg

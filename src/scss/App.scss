@@ -348,8 +348,9 @@ svg {
         width: 45px;
 
         img {
-            height: inherit;
-            width: inherit;
+            height: auto;
+            width: 100%;
+            min-height: 100%;
         }
     }
 
@@ -385,6 +386,8 @@ svg {
 
 
 textarea {
+    @include defTxt();
+    font-size: var(--lgFontSize);
     resize: none;
 
     height: 100%;
@@ -393,6 +396,15 @@ textarea {
     padding: 10px;
     border: 1px solid var(--lightGrey);
     outline: none;
+}
+
+
+.HomePageContainer {
+    @include hiddenScroll();
+    padding-top: 20px;
+    height: 605px;
+    padding-bottom: 100px;
+    overflow-y: scroll;
 }
 
 @media only screen and (max-width: 767px) {

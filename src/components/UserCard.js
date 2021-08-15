@@ -2,31 +2,31 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import '../scss/UserCard.scss';
 
-export default function UserCard() {
+
+const UserCard = ({ user }) => {
     const history = useHistory();
 
     const navitageToChats = () => {
-        history.push('/chats/1');
-
+        history.push(`/chats/${user.id}`);
     }
     return (
-        <div className="UserCardContainer" onClick={navitageToChats}>
+        <div className="UserCardContainer mb-20" onClick={navitageToChats}>
             <div className="user-card-avator-wrapper">
                 <div className="avator-img-wrapper">
-                    <img src="/avators/4.jpeg" alt="User Name" />
+                    <img src={user.img} alt="User Name" />
                 </div>
-                <div className="status-icon active">&nbsp;</div>
+                <div className={(user.status) ? 'status-icon active' : 'status-icon'}>&nbsp;</div>
             </div>
             <div className="user-card-body-wrapper">
                 <div className="header-wrapper">
-                    <h3>Anna Rose</h3>
+                    <h3>{user.name}</h3>
 
                     <div className="user-time-wrapper">
-                        3 mins Ago
+                        {user.time}
                     </div>
                 </div>
                 <div className="body-wrapper">
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit veritatis sunt a beatae fuga culpa repudiandae eos atque non doloribus accusamus vitae iure dolorum voluptates, obcaecati recusandae nostrum. Doloribus?</p>
+                    <p> {user.text}</p>
 
                 </div>
             </div>
@@ -34,3 +34,5 @@ export default function UserCard() {
         </div>
     )
 }
+
+export default UserCard;

@@ -3,8 +3,6 @@ import routes from '../config/routes';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = props => {
-
-
     return (
         <div>
             <Router>
