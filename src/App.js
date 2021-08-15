@@ -15,7 +15,7 @@ export default class App extends Component {
             displayText: 'INITIALIZED: ready to test speech...'
         }
     }
-    
+
     async componentDidMount() {
         // check for valid speech key/region
         const tokenRes = await getTokenOrRefresh();
@@ -30,7 +30,7 @@ export default class App extends Component {
         const tokenObj = await getTokenOrRefresh();
         const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.authToken, tokenObj.region);
         speechConfig.speechRecognitionLanguage = 'en-US';
-        
+
         const audioConfig = speechsdk.AudioConfig.fromDefaultMicrophoneInput();
         const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
 
@@ -86,7 +86,6 @@ export default class App extends Component {
         return (
             <Container className="app-container">
                 <h1 className="display-4 mb-3">Speech sample app</h1>
-
                 <div className="row main-container">
                     <div className="col-6">
                         <i className="fas fa-microphone fa-lg mr-2" onClick={() => this.sttFromMic()}></i>
@@ -94,11 +93,11 @@ export default class App extends Component {
 
                         <div className="mt-2">
                             <label htmlFor="audio-file"><i className="fas fa-file-audio fa-lg mr-2"></i></label>
-                            <input 
-                                type="file" 
-                                id="audio-file" 
-                                onChange={(e) => this.fileChange(e)} 
-                                style={{display: "none"}} 
+                            <input
+                                type="file"
+                                id="audio-file"
+                                onChange={(e) => this.fileChange(e)}
+                                style={{ display: "none" }}
                             />
                             Convert speech to text from an audio file.
                         </div>
