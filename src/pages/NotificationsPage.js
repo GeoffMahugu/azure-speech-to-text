@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function NotificationsPage() {
     return (
-        <div>
+        <div className="page-wrapper">
             <h1>notifications Page</h1>
         </div>
     )

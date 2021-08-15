@@ -18,10 +18,13 @@
     --txtGrey: #707070;
 
     --lgFontSize: 15px;
-    --defFontSize: 13px;
+    --defFontSize: 12px;
     --smFontSize: 8px;
-    --containerPadding: 0px 30px;
+    --containerPadding: 0px 20px;
     --defBorderRadius: 5px;
+
+    --defBoxShadow: 0px 3px 10px 1px var(--lightGrey);
+
 }
 
 
@@ -144,6 +147,10 @@ body {
     text-align: right;
 }
 
+.header-txt {
+    font-size: var(--lgFontSize);
+}
+
 .font-title {
     font-size: 18px;
 }
@@ -232,17 +239,29 @@ body {
 }
 
 .page-wrapper {
-
-    padding: var(--containerPadding);
+    @include scrollItem();
     width: 100%;
     max-height: 668px;
     min-height: 668px;
     max-width: 375px;
     min-width: 375px;
     margin: auto;
-    border: 1px solid var();
+    border: 1px solid var(--lightGrey);
+    box-shadow: var(--defBoxShadow);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
+.main-body-wrapper {
+    padding: var(--containerPadding);
+
+}
+
+svg {
+    @include pointerItem();
+    color: var(--txtGrey);
+}
 
 
 

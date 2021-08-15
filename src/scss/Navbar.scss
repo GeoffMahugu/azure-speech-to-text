@@ -1,0 +1,80 @@
+@import './App.scss';
+
+.NavbarContainer {
+    padding: var(--containerPadding);
+    height: 60px;
+    width: 100%;
+    background-color: var(--lightGrey);
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .main-nav-wrapper {
+        grid-template-columns: auto 100px;
+
+    }
+
+    .page-nav-wrapper {
+        grid-template-columns: 50px auto 50px;
+
+    }
+
+    .main-nav-wrapper,
+    .page-nav-wrapper {
+        display: grid;
+        grid-template-rows: 60px;
+        align-items: center;
+
+        .left-nav-wrapper {
+            .logo-wrapper {
+                .logo-txt {
+                    font-size: 20px;
+                    color: var(--primaryColor);
+                }
+            }
+        }
+
+        .center-nav-wrapper {
+            text-align: center;
+        }
+
+        .right-nav-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 50px;
+            align-items: center;
+
+            .search-icon-wrapper {}
+
+            .avator-wrapper {
+                height: 50px;
+                width: 50px;
+                position: relative;
+
+
+                .avator-img-wrapper {
+                    overflow: hidden;
+                    border-radius: var(--defBorderRadius);
+                    height: 45px;
+                    width: 45px;
+
+                    img {
+                        height: inherit;
+                        width: inherit;
+                    }
+                }
+
+
+                .status-icon {
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 50%;
+                    background-color: var(--bgGrey);
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
