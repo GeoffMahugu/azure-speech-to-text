@@ -4,10 +4,13 @@
     padding: var(--containerPadding);
     height: 60px;
     width: 100%;
-    background-color: var(--lightGrey);
     position: sticky;
     top: 0;
     left: 0;
+    box-shadow: 1px 0px 0px 1px var(--lightGrey);
+    z-index: 10;
+    background-color: var(--pureWhite);
+
 
     .main-nav-wrapper {
         grid-template-columns: auto 100px;
@@ -46,35 +49,7 @@
 
             .search-icon-wrapper {}
 
-            .avator-wrapper {
-                height: 50px;
-                width: 50px;
-                position: relative;
 
-
-                .avator-img-wrapper {
-                    overflow: hidden;
-                    border-radius: var(--defBorderRadius);
-                    height: 45px;
-                    width: 45px;
-
-                    img {
-                        height: inherit;
-                        width: inherit;
-                    }
-                }
-
-
-                .status-icon {
-                    height: 10px;
-                    width: 10px;
-                    border-radius: 50%;
-                    background-color: var(--bgGrey);
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                }
-            }
         }
     }
 }

@@ -1,0 +1,40 @@
+@import './App.scss';
+
+.UserCardContainer {
+    @include pointerItem();
+    width: 100%;
+    height: 80px;
+    border-radius: var(--lgBorderRadius);
+    box-shadow: var(--defBoxShadow);
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-template-rows: 60px;
+    padding: 10px;
+
+    grid-gap: 10px;
+
+    .user-card-body-wrapper {
+        @include defTxt();
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 30px 20px;
+        overflow: hidden;
+
+        .header-wrapper {
+            display: grid;
+            grid-template-columns: auto 50px;
+
+            .user-time-wrapper {
+                @include defTxt();
+                font-size: var(--smFontSize);
+            }
+
+        }
+    }
+
+    &:hover {
+        border: 1px solid var(--primaryColor);
+    }
+
+
+}

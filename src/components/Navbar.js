@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import '../scss/Navbar.scss';
 import { IoArrowBack, IoSearch } from 'react-icons/io5';
-import { useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 
 const Navbar = props => {
+    const history = useHistory();
+
     const location = useLocation();
     const [currPage, setCurrPage] = useState(location.pathname);
 
     console.log(location.pathname);
+    const navitageToHome = () => {
+        history.push('/');
+    }
 
     return (
         <div className="NavbarContainer">
@@ -27,7 +32,7 @@ const Navbar = props => {
                             <div className="avator-img-wrapper">
                                 <img src="/avators/4.jpeg" alt="User Name" />
                             </div>
-                            <div className="status-icon">&nbsp;</div>
+                            <div className="status-icon active">&nbsp;</div>
                         </div>
                     </div>
                 </div>
@@ -35,7 +40,7 @@ const Navbar = props => {
                 <div className="page-nav-wrapper">
                     <div className="left-nav-wrapper">
                         <div className="back-wrapper">
-                            <IoArrowBack />
+                            <IoArrowBack onClick={navitageToHome} />
                         </div>
                     </div>
                     <div className="center-nav-wrapper">
@@ -47,7 +52,7 @@ const Navbar = props => {
                             <div className="avator-img-wrapper">
                                 <img src="/avators/4.jpeg" alt="User Name" />
                             </div>
-                            <div className="status-icon">&nbsp;</div>
+                            <div className="status-icon active">&nbsp;</div>
                         </div>
                     </div>
                 </div>

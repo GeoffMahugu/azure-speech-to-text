@@ -1,0 +1,159 @@
+@import './App.scss';
+
+.chat-section-wrapper {
+    height: 100%;
+    position: relative;
+
+    // START - CHAT SECTION 
+
+    .chat-wrapper {
+        @include hiddenScroll();
+        height: calc(100% - 80px);
+        border: 1px solid var(--primaryGrey);
+        border-radius: var(--defBorderRadius);
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+
+
+        .messages {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            @include defTxt();
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .receiver {
+            align-items: flex-start;
+        }
+
+        .receiver .message {
+            margin-right: 25%;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .receiver .message.last:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+            left: -7px;
+            height: 20px;
+            width: 20px;
+            background: #eee;
+            border-bottom-right-radius: 15px;
+        }
+
+        .receiver .message.last:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: -10px;
+            width: 10px;
+            height: 20px;
+            background: white;
+            border-bottom-right-radius: 10px;
+        }
+
+        .sender {
+            align-items: flex-end;
+        }
+
+        .sender .message {
+            color: white;
+            margin-left: 25%;
+            background-color: var(--primaryColor);
+
+            position: relative;
+        }
+
+        .sender .message.last:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+            right: -8px;
+            height: 20px;
+            width: 20px;
+            background-color: var(--primaryColor);
+            border-bottom-left-radius: 15px;
+        }
+
+        .sender .message.last:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            right: -9px;
+            width: 10px;
+            height: 20px;
+            background: white;
+            border-bottom-left-radius: 10px;
+        }
+    }
+
+    // END - CHAT SECTION 
+
+
+    .record-btn-wrapper {
+        @include CircleBtn();
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
+    }
+
+    // START - VOICE MESSAGE SECTION 
+
+    .voice-message-wrapper {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background-color: #6c6c7f42;
+        z-index: 5;
+        height: 100%;
+
+        display: flex;
+        align-items: flex-end;
+
+
+
+        .voice-message-inner-wrapper {
+            padding: 20px 10px;
+
+            border-top-left-radius: var(--lgBorderRadius);
+            border-top-right-radius: var(--lgBorderRadius);
+            background-color: var(--pureWhite);
+
+            .txt-message-wrapper {
+                @include defTxt();
+                height: 90px;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+
+            .btn-wrapper {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                grid-gap: 0px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 60px;
+            }
+        }
+    }
+
+    // END - VOICE MESSAGE  SECTION 
+
+}
