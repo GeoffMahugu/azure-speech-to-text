@@ -1,10 +1,26 @@
 import Navbar from 'components/Navbar';
-import React from 'react';
-import { IoAddSharp, IoClose, IoSendOutline } from 'react-icons/io5';
+import React, { useState, } from 'react';
+import { IoClose, IoMicOutline, IoSendOutline } from 'react-icons/io5';
 
 import '../scss/Chat.scss'
 
 export default function ChatPage() {
+    const [recodingAudio, setRecordingAudio] = useState(false);
+    const [message, setMessage] = useState('');
+
+    const recordAudio = () => {
+        setRecordingAudio(true);
+    }
+
+    const cancelRecording = () => {
+        setRecordingAudio(false);
+        setMessage('');
+    }
+    const postRecording = () => {
+        setRecordingAudio(false);
+        setMessage('');
+    }
+
     return (
         <div className="page-wrapper">
             <Navbar />
@@ -38,25 +54,30 @@ export default function ChatPage() {
                         </div>
                     </div>
 
-                    <div className="record-btn-wrapper">
-                        <IoAddSharp />
-                    </div>
+                    <button className="record-btn-wrapper">
+                        <IoMicOutline onClick={recordAudio} />
+                    </button>
 
-                    {/* <div className="voice-message-wrapper">
-                        <div className="voice-message-inner-wrapper">
-                            <div className="txt-message-wrapper">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime at facere corrupti quos sapiente iure. Id soluta autem sapiente illum aliquam esse explicabo deserunt eum, aperiam illo voluptatibus eius ipsa.</p>
-                            </div>
-                            <div className="btn-wrapper">
-                                <button className="circle-accent-btn">
-                                    <IoClose />
-                                </button>
-                                <button className="circle-primary-btn">
-                                    <IoSendOutline />
-                                </button>
+                    {(recodingAudio) &&
+
+                        <div className="voice-message-wrapper">
+                            <div className="voice-message-inner-wrapper">
+                                <div className="txt-message-wrapper">
+                                    <textarea name="message" id="message" placeholder="Voice text goes here.">{message}</textarea>
+                                </div>
+                                <div className="btn-wrapper">
+                                    <button className="circle-accent-btn" onClick={cancelRecording}>
+                                        <IoClose />
+                                    </button>
+                                    <button className="circle-primary-btn" onClick={postRecording}>
+                                        <IoSendOutline />
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div> */}
+                    }
+
+
 
                 </div>
             </div>
