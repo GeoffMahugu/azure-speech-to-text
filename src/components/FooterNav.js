@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 import '../scss/FooterNav.scss';
 import { IoCallOutline, IoHomeOutline, IoNotificationsOutline } from 'react-icons/io5';
 import { useHistory, useLocation } from 'react-router-dom';
