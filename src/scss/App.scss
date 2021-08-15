@@ -7,22 +7,19 @@
 
 :root {
     --pureWhite: #ffffff;
-    --primaryBlack: #000000;
+    --primaryBlack: #5C5C5C;
     --fontFamily: 'Roboto', sans-serif;
 
-    --primaryColor: #00D2BE;
-    --accentColor: #FFDE00;
-    --secondaryColor: #376DF9;
+    --primaryColor: #3E7FE0;
+    --accentColor: #DD3EE0;
 
-    --primaryGrey: #6A6A6A;
-    --lightGrey: #F5F5F5;
-    --primaryRed: #FF8D74;
+    --bgGrey: #757575;
+    --lightGrey: #EEEEEE;
+    --txtGrey: #707070;
 
-
-    --defFontSize: 15px;
-    --smFontSize: 12px;
-    --xsmFontSize: 8px;
-    --full-containerPadding: 30px;
+    --lgFontSize: 15px;
+    --defFontSize: 13px;
+    --smFontSize: 8px;
     --containerPadding: 0px 30px;
     --defBorderRadius: 5px;
 }
@@ -31,13 +28,6 @@
 
 // MIXINS START   ----------------------
 
-
-
-@mixin pageContainer {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0px auto;
-}
 
 @mixin pointerItem {
     cursor: pointer;
@@ -235,28 +225,25 @@ body {
 // PAGES START   ----------------------
 
 
+#root {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
 
-.HomeContainer,
-.ProfilePageContainer,
-.DiscoverPageContainer,
-.HireDesignersPageContainer,
-.NotificationsPageContainer,
-.MessagesPageContainer,
-.ContractsContainer,
-.WriteContractPageContainer,
-.ContractDetailsContainer {
+.page-wrapper {
 
-    @include pageContainer();
     padding: var(--containerPadding);
-    min-height: 700px
+    width: 100%;
+    max-height: 668px;
+    min-height: 668px;
+    max-width: 375px;
+    min-width: 375px;
+    margin: auto;
+    border: 1px solid var();
 }
 
 
-
-
-.lg-hide {
-    display: none !important;
-}
 
 
 @media only screen and (max-width: 767px) {
