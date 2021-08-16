@@ -2,6 +2,8 @@
 
 This is a chat based application using voice to text speech service by Microsoft Azure Speech service.
 
+<img width="2203" alt="talkbox" src="https://user-images.githubusercontent.com/17265995/129496766-adf5c248-2b88-48e3-969c-220c65f313c4.png">
+
 ## Prerequisites
 
 1. This article assumes that you have an Azure account and Speech service subscription. If you don't have an account and subscription, [try the Speech service for free](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview#try-the-speech-service-for-free).
